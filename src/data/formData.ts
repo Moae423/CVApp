@@ -1,4 +1,4 @@
-const sections = [
+const Cards = [
   {
     id: 1,
     title: "Profile InformatIon",
@@ -45,4 +45,4 @@ const sections = [
   },
 ];
 
-export default sections;
+export default Cards;
