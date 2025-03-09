@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Resume from "../assets/image/Resume-pana.png";
+import { Link } from "react-router-dom";
 const Homepage = () => {
   return (
     <div className="px-4 md:px-0 flex flex-wrap flex-col-reverse md:flex-row  py-32 md:py-0 items-center justify-evenly min-h-screen ">
@@ -12,9 +13,11 @@ const Homepage = () => {
           Make it count with our easy-to-use CV Builder! Whether you're a fresh
           graduate or a seasoned pro, create a CV that stands out in minutes.
         </p>
-        <Button className="text-xl  py-3 mt-3 cursor-pointer bg-[#3E5C76] text-EggShell hover:text-[#3E5C76] hover:bg-EggShell font-Erode font-semibold hover:scale-105 transition duration-300">
-          Get Started
-        </Button>
+        <Link to="/Resume">
+          <Button className="text-xl  py-3 mt-3 cursor-pointer bg-[#3E5C76] text-EggShell hover:text-[#3E5C76] hover:bg-EggShell font-Erode font-semibold hover:scale-105 transition duration-300">
+            Get Started
+          </Button>
+        </Link>
       </div>
       <img src={Resume} className="w-3xl" alt="" />
     </div>
