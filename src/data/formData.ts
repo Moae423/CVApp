@@ -44,7 +44,7 @@ const DataForm = [
         type: "text",
         placeholder: "What is your Degree",
       },
-      { label: "Date", type: "Date" },
+      { label: "Date", type: "date" },
     ],
   },
   {

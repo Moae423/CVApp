@@ -2,6 +2,7 @@ import { CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
+import DatePicker from "./DatePicker";
 
 interface Field {
   label?: string;
@@ -18,13 +19,15 @@ export const Fields = ({ fields }: FieldsProps) => {
     <div className="">
       <CardContent>
         {fields.map((item) => (
-          <div className="grid w-full max-w-sm items-center gap-1.5">
+          <div className="grid w-full max-w-sm items-center gap-1.5 ">
             <Label className="text-lg font-Satoshi text-EggShell ">
               {item.label}
             </Label>
-            {item.component === "Textarea" ? (
+            {item.type === "date" ? (
+              <DatePicker />
+            ) : item.component === "Textarea" ? (
               <Textarea
-                className="bg-EggShell border-none"
+                className="bg-EggShell border-none font-Satoshi text-lg"
                 placeholder="Type your message here."
               />
             ) : (
@@ -32,7 +35,7 @@ export const Fields = ({ fields }: FieldsProps) => {
                 type={item.type}
                 id={item.label}
                 placeholder={item.placeholder}
-                className="bg-EggShell border-none font-Satoshi"
+                className="bg-EggShell border-none font-Satoshi text-lg"
               />
             )}
           </div>
