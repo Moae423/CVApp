@@ -65,12 +65,19 @@ const Navbar = () => {
             </Button>
           </li>
           <li>
-            <Button
-              variant="link"
-              className="text-xl font-Erode font-medium text-EggShell cursor-pointer transition duration-300"
+            <Link
+              target="_blank"
+              to={
+                "https://github.com/Moae423?tab=overview&from=2025-03-01&to=2025-03-11"
+              }
             >
-              Contact
-            </Button>
+              <Button
+                variant="link"
+                className="text-xl font-Erode font-medium text-EggShell cursor-pointer transition duration-300"
+              >
+                Contact
+              </Button>
+            </Link>
           </li>
         </ul>
         {/* Desktop View */}
@@ -86,20 +93,24 @@ const Navbar = () => {
               <div className="flex flex-col space-y-4">
                 <ul className="md:flex flex-wrap ">
                   <li>
-                    <Button
-                      variant="link"
-                      className="text-xl font-Erode font-medium  cursor-pointer transition duration-300 "
-                    >
-                      Home
-                    </Button>
+                    <Link to="/">
+                      <Button
+                        variant="link"
+                        className="text-xl font-Erode font-medium  cursor-pointer transition duration-300 "
+                      >
+                        Home
+                      </Button>
+                    </Link>
                   </li>
                   <li>
-                    <Button
-                      variant="link"
-                      className="text-xl font-Erode font-medium  cursor-pointer transition duration-300"
-                    >
-                      Services
-                    </Button>
+                    <Link to="/Resume">
+                      <Button
+                        variant="link"
+                        className="text-xl font-Erode font-medium  cursor-pointer transition duration-300"
+                      >
+                        Resume Builder
+                      </Button>
+                    </Link>
                   </li>
                   <li>
                     <Button
@@ -110,12 +121,17 @@ const Navbar = () => {
                     </Button>
                   </li>
                   <li>
-                    <Button
-                      variant="link"
-                      className="text-xl font-Erode font-medium  cursor-pointer transition duration-300"
+                    <Link
+                      target="_blank"
+                      to="https://github.com/Moae423?tab=overview&from=2025-03-01&to=2025-03-11"
                     >
-                      Contact
-                    </Button>
+                      <Button
+                        variant="link"
+                        className="text-xl font-Erode font-medium  cursor-pointer transition duration-300"
+                      >
+                        Contact
+                      </Button>
+                    </Link>
                   </li>
                 </ul>
                 <Button className="text-xl py-3 cursor-pointer border-2 outline bg-transparent text-[#3E5C76] hover:text-[#3E5C76] hover:bg-EggShell font-Erode font-semibold hover:scale-105 transition duration-300">

@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Fields } from "@/components/Field";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import formData from "@/data/formData";
 
 const Resume = () => {
   return (
@@ -9,73 +9,24 @@ const Resume = () => {
       <h1 className="text-RichBlack text-4xl font-bold text-center py-4 font-Erode">
         Resume Builder
       </h1>
-      <Card className="w-md m-3 bg-DarkBlue">
-        <CardHeader>
-          <CardTitle className="text-EggShell text-2xl font-Erode">
-            Profile Information
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form>
-            <div className="grid w-full items-center gap-4 text-white">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name" className="font-Satoshi text-lg">
-                  Name
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  className="bg-EggShell text-RichBlack"
-                  placeholder="What's Your Name"
-                />
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name" className="font-Satoshi text-lg">
-                  Phone Number
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  className="bg-EggShell text-RichBlack"
-                  placeholder="What's Your Phone Number"
-                />
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name" className="font-Satoshi text-lg">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  className="bg-EggShell text-RichBlack"
-                  placeholder="What's Your Email"
-                />
-              </div>
-
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name" className="font-Satoshi text-lg">
-                  LinkedIn
-                </Label>
-                <Input
-                  id="linkedin"
-                  name="linkedin"
-                  className="bg-EggShell text-RichBlack"
-                  placeholder="What's Your Linkedin"
-                />
-              </div>
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="message">Your message</Label>
-                <Textarea
-                  placeholder="Type your message here"
-                  className="bg-EggShell text-RichBlack"
-                  id="message"
-                />
-              </div>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
-      )
+      <div className="flex items-center justify-center flex-col flex-wrap gap-3 py-3 ">
+        {formData.map((item) => (
+          <Card key={item.id} className="bg-DarkBlue   w-sm md:w-md lg:w-xl">
+            <CardHeader>
+              <CardTitle className="text-3xl text-center font-Erode text-EggShell">
+                {item.title}
+              </CardTitle>
+              <Fields fields={item.field} />
+            </CardHeader>
+          </Card>
+        ))}
+        <Button
+          type="submit"
+          className="text-xl p-6 cursor-pointer bg-[#3E5C76] text-EggShell hover:text-RichBlack border-2 border-DarkBlue  hover:bg-EggShell font-Erode font-semibold hover:scale-105 transition duration-300"
+        >
+          Download My Cv
+        </Button>
+      </div>
     </div>
   );
 };
